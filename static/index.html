@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Analyzer | Next-Gen Recruiting</title>
+    <meta name="description" content="AI-powered Resume Analyzer using Groq LLM to instantly evaluate candidate eligibility.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Marked library to parse Markdown into HTML -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="background-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1>Resume<span class="gradient-text">Analyzer</span></h1>
+            <p>AI-Powered Candidate Eligibility Evaluation</p>
+        </header>
+
+        <main>
+            <div class="glass-card" id="upload-section">
+                <form id="analyze-form">
+                    <div class="input-group">
+                        <label for="resume">Candidate Resume (PDF/DOCX/TXT)</label>
+                        <div class="file-upload">
+                            <input type="file" id="resume" name="resume" accept=".pdf,.docx,.doc,.txt" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="job_description_text">Job Description (Text)</label>
+                        <textarea id="job_description_text" name="job_description_text" rows="6" placeholder="Paste the job description here..."></textarea>
+                    </div>
+                    
+                    <p class="or-divider"><span>OR</span></p>
+
+                    <div class="input-group">
+                        <label for="job_description">Job Description (File)</label>
+                        <div class="file-upload">
+                            <input type="file" id="job_description" name="job_description" accept=".pdf,.docx,.doc,.txt">
+                        </div>
+                    </div>
+
+                    <button type="submit" id="submit-btn" class="glow-button">
+                        <span class="btn-text">Analyze Candidate</span>
+                        <div class="loader hidden" id="loader"></div>
+                    </button>
+                </form>
+            </div>
+
+            <div class="glass-card hidden" id="results-section">
+                <h2>Analysis Results</h2>
+                <div class="meta-data">
+                    <p><strong>Candidate File:</strong> <span id="candidate-filename"></span></p>
+                </div>
+                <div id="evaluation-content" class="markdown-body">
+                    <!-- LLM Output goes here -->
+                </div>
+                <button id="reset-btn" class="glow-button secondary">Analyze Another Candidate</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
