@@ -2,6 +2,11 @@
 
 An intelligent, AI-powered Resume Analyzer built with FastAPI and the Groq LLM API. This application automates the candidate screening process by evaluating a candidate's resume against a specific job description, highlighting matched skills, identifying missing requirements, and providing a final recommendation.
 
+## 🌐 Live Demo
+**Try it out here:** [https://resume-analyzer-4i7q.onrender.com/](https://resume-analyzer-4i7q.onrender.com/)
+
+> **Note:** This application is hosted on a free Render instance. If the app hasn't been accessed for a while, the backend server will spin down to save resources. **It may take around 50 seconds to a minute to wake up** when you first visit the link. Please be patient!
+
 ## ✨ Features
 *   **Automated Document Parsing:** Seamlessly extracts text from PDF, DOCX, and TXT resume files.
 *   **High-Speed AI Analysis:** Utilizes the blazing-fast Groq API (`llama-3.1-8b-instant`) to perform deep cognitive analysis of the candidate's profile.
